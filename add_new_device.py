@@ -32,7 +32,10 @@ class AddNewDevice(Script):
 
     device_model = ObjectVar(
         description="Device model",
-        model=DeviceType
+        model=DeviceType,
+        query_params={
+            'manufacturer': '$manufacturer'
+        }
     )
 
     platform = ObjectVar(
