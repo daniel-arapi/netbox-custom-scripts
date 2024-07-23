@@ -25,13 +25,13 @@ class AddNewDevice(Script):
     )
 
     manufacturer = ObjectVar(
-        description="Select device vendor",
+        description="Select the device manufacturer",
         model=Manufacturer,
         required=True
     )
 
-    device_model = ObjectVar(
-        description="Device model",
+    device_type = ObjectVar(
+        description="Select the device type",
         model=DeviceType,
         query_params={
             'manufacturer': '$manufacturer'
@@ -39,7 +39,7 @@ class AddNewDevice(Script):
     )
 
     platform = ObjectVar(
-        description="Select device software platform",
+        description="Select the device platform",
         model=Platform,
         required=True
     )
