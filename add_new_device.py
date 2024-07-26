@@ -104,6 +104,7 @@ class AddNewDevice(Script):
             description=data['interface_description'],
             type=data['interface_type']
         )
+        
         new_interface.full_clean()
         new_interface.save()
         self.log_success(f"Added new interface {new_interface} to device {new_device}")
@@ -114,6 +115,7 @@ class AddNewDevice(Script):
             address=data['interface_ip'],
             assigned_object=new_interface
         )
+
         new_interface.snapshot()
         # new_ip.full_clean() # Check for duplicates
         new_ip.save()
